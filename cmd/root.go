@@ -1,6 +1,5 @@
 /*
 Copyright © 2026 favour Musenga favourmusenga@gmail.com
-
 */
 package cmd
 
@@ -8,6 +7,8 @@ import (
 	"fmt"
 	"os"
 
+	categorycmd "github.com/favourmusenga/task-manager/cmd/categoryCmd"
+	todocmd "github.com/favourmusenga/task-manager/cmd/todoCmd"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -16,7 +17,7 @@ var cfgFile string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "task-manager",
+	Use:   "taskmar",
 	Short: "A brief description of your application",
 	Long: `A longer description that spans multiple lines and likely contains
 examples and usage of using your application. For example:
@@ -46,6 +47,10 @@ func init() {
 	// will be global for your application.
 
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.task-manager.yaml)")
+
+	// Add subcommands
+	rootCmd.AddCommand(todocmd.NewCommand())
+	rootCmd.AddCommand(categorycmd.NewCommand())
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
