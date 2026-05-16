@@ -6,17 +6,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "List categories",
-	Long:  "View all task categories.",
+var updateCmd = &cobra.Command{
+	Use:   "update",
+	Short: "Update a category",
+	Long:  "Modify an existing category.",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Listing all categories...")
+		fmt.Println("Updating category...")
 	},
 }
 
 func init() {
-	categoryCmd.AddCommand(listCmd)
+	categoryCmd.AddCommand(updateCmd)
 
 	// Here you will define your flags and configuration settings.
 }

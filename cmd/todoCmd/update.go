@@ -6,17 +6,17 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var listCmd = &cobra.Command{
-	Use:   "list",
-	Short: "List tasks",
-	Long:  "View all todo tasks.",
+var updateCmd = &cobra.Command{
+	Use:   "update",
+	Short: "Update a task",
+	Long:  "Modify an existing task.",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Listing all todo tasks...")
+		fmt.Println("Updating category...")
 	},
 }
 
 func init() {
-	todoCmd.AddCommand(listCmd)
+	todoCmd.AddCommand(updateCmd)
 
 	// Here you will define your flags and configuration settings.
 }

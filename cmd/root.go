@@ -18,13 +18,13 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "taskmar",
-	Short: "A brief description of your application",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
+	Short: "Priority-based task manager for the terminal",
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Long: `TaskMar is a lightweight and efficient CLI task manager built for organizing todos with priorities directly from your terminal.
+
+It helps you create, manage, and track tasks using a simple command-line workflow designed for speed and productivity. With support for priority levels, TaskMar makes it easy to focus on important work while keeping your daily tasks organized.
+
+Whether you are managing personal goals, study plans, or development tasks, TaskMar provides a clean and fast terminal experience for staying productive.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
