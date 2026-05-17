@@ -9,6 +9,7 @@ import (
 
 	categorycmd "github.com/favourmusenga/task-manager/cmd/categoryCmd"
 	todocmd "github.com/favourmusenga/task-manager/cmd/todoCmd"
+	"github.com/favourmusenga/task-manager/internals/db"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -55,6 +56,13 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+
+	// Initialize the database
+	err := db.InitDB("task_manager.db")
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "Failed to initialize database:", err)
+		os.Exit(1)
+	}
 }
 
 // initConfig reads in config file and ENV variables if set.

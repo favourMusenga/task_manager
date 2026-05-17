@@ -13,6 +13,7 @@ var addCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Adding a new category...")
 	},
+	Args: cobra.ExactArgs(1),
 }
 
 func init() {

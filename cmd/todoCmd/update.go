@@ -10,8 +10,9 @@ var updateCmd = &cobra.Command{
 	Use:   "update",
 	Short: "Update a task",
 	Long:  "Modify an existing task.",
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Updating category...")
+		fmt.Println("Updating task...")
 	},
 }
 

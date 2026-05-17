@@ -8,6 +8,7 @@ var deleteCmd = &cobra.Command{
 	Use:   "delete",
 	Short: "Delete a task",
 	Long:  "Remove a task using its ID.",
+	Args:  cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		// Implementation for deleting a todo task will go here
 	},
