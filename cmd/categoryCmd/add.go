@@ -56,5 +56,5 @@ func init() {
 	categoryCmd.AddCommand(addCmd)
 
 	// Here you will define your flags and configuration settings.
-	addCmd.Flags().StringP("description", "d", "", "Add categoory description")
+	addCmd.Flags().StringP("description", "d", "", "Add category description")
 }

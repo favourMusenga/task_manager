@@ -16,3 +16,11 @@ func AddCategory(dbc *gorm.DB, ctx context.Context, name string, categoryOption 
 
 	return err
 }
+
+func ListCategory(dbc *gorm.DB, ctx context.Context) ([]dbm.Category, *gorm.DB) {
+	var categories []dbm.Category
+
+	results := dbc.Find(&categories)
+
+	return categories, results
+}
